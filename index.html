@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PRIME — рекламное агентство</title>
+<meta name="description" content="PRIME — современное рекламное агентство. Полиграфия, наружная реклама, сувенирная продукция, SMM и оформление социальных сетей.">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap');
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+    font-family:'Montserrat',Arial,sans-serif;
+    background:#080808;
+    color:#fff;
+    line-height:1.6;
+}
+a{text-decoration:none;color:inherit}
+.container{width:min(1160px,92%);margin:auto}
+
+/* Header */
+header{
+    position:sticky;top:0;z-index:100;
+    background:rgba(8,8,8,.94);
+    border-bottom:1px solid #242424;
+    backdrop-filter:blur(10px);
+}
+.nav{
+    height:78px;display:flex;align-items:center;justify-content:space-between;
+}
+.logo{font-size:28px;font-weight:900;letter-spacing:5px}
+.logo span{color:#e50914}
+nav{display:flex;gap:30px}
+nav a{font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:1px;color:#ddd;transition:.2s}
+nav a:hover{color:#e50914}
+.btn{
+    display:inline-block;background:#e50914;color:#fff;
+    padding:15px 25px;border-radius:2px;font-size:12px;
+    font-weight:800;text-transform:uppercase;letter-spacing:1.3px;
+    border:1px solid #e50914;transition:.25s;cursor:pointer;
+}
+.btn:hover{background:#fff;color:#080808;border-color:#fff}
+.btn-outline{background:transparent;border-color:#555}
+.btn-outline:hover{background:#e50914;color:#fff;border-color:#e50914}
+
+/* Hero */
+.hero{
+    min-height:calc(100vh - 78px);
+    display:flex;align-items:center;
+    position:relative;overflow:hidden;
+    border-bottom:1px solid #222;
+}
+.hero:before{
+    content:"";position:absolute;width:520px;height:520px;
+    right:-160px;top:-120px;background:#e50914;
+    opacity:.08;border-radius:50%;filter:blur(4px);
+}
+.hero-grid{
+    display:grid;grid-template-columns:1.2fr .8fr;gap:70px;
+    align-items:center;padding:90px 0;
+}
+.kicker{
+    color:#e50914;font-size:12px;font-weight:800;
+    text-transform:uppercase;letter-spacing:3px;margin-bottom:22px;
+}
+h1{
+    font-size:clamp(48px,7vw,88px);line-height:.95;
+    font-weight:900;letter-spacing:-3px;text-transform:uppercase;
+}
+h1 span{color:#e50914}
+.hero-text{max-width:610px;color:#aaa;font-size:17px;margin:30px 0}
+.hero-buttons{display:flex;gap:14px;flex-wrap:wrap}
+.hero-card{
+    border:1px solid #303030;padding:40px;
+    background:linear-gradient(145deg,#111,#090909);
+    position:relative;overflow:hidden;
+}
+.hero-card:after{
+    content:"";position:absolute;right:0;bottom:0;
+    width:80px;height:3px;background:#e50914;
+}
+.hero-card h3{font-size:26px;line-height:1.15;margin-bottom:20px}
+.hero-card p{color:#999;font-size:14px}
+.stat{display:flex;gap:20px;margin-top:35px}
+.stat strong{font-size:38px;color:#e50914}
+.stat small{display:block;color:#777;font-size:11px;text-transform:uppercase}
+
+/* Sections */
+section{padding:110px 0}
+.section-head{display:flex;justify-content:space-between;gap:30px;margin-bottom:55px;align-items:end}
+.eyebrow{color:#e50914;font-size:11px;font-weight:800;letter-spacing:3px;text-transform:uppercase;margin-bottom:12px}
+h2{font-size:clamp(35px,5vw,62px);line-height:1;font-weight:800;letter-spacing:-2px}
+.section-head p{max-width:430px;color:#888;font-size:14px}
+
+.about{background:#0d0d0d}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px}
+.about-main{font-size:23px;line-height:1.5;font-weight:500}
+.about-main b{color:#e50914}
+.about-side{color:#888;font-size:14px}
+.about-side p+p{margin-top:20px}
+.quote{
+    margin-top:40px;padding:25px 0 25px 25px;
+    border-left:3px solid #e50914;
+    color:#fff;font-size:18px;font-weight:700;
+}
+
+/* Services */
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:#2a2a2a;border:1px solid #2a2a2a}
+.service{
+    background:#080808;padding:34px 28px;min-height:230px;
+    transition:.25s;position:relative;
+}
+.service:hover{background:#111}
+.service-number{color:#e50914;font-size:11px;font-weight:800;letter-spacing:2px}
+.service h3{font-size:20px;margin:25px 0 12px}
+.service p{color:#777;font-size:13px}
+.service:after{content:"↗";position:absolute;right:25px;top:30px;color:#444;font-size:20px}
+
+/* CTA */
+.cta{
+    background:#e50914;
+    color:#fff;text-align:center;padding:90px 20px;
+}
+.cta h2{font-size:clamp(38px,6vw,72px);margin-bottom:20px}
+.cta p{max-width:600px;margin:0 auto 30px;color:#ffd5d5}
+.cta .btn{background:#080808;border-color:#080808}
+.cta .btn:hover{background:#fff;color:#080808}
+
+/* Contact */
+.contact{background:#0d0d0d}
+.contact-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:70px}
+.contact-info{display:grid;gap:28px}
+.contact-item span{
+    display:block;color:#e50914;font-size:10px;font-weight:800;
+    letter-spacing:2px;text-transform:uppercase;margin-bottom:6px
+}
+.contact-item strong{font-size:18px}
+.contact-item a:hover{color:#e50914}
+.form{display:grid;gap:14px}
+input,textarea{
+    width:100%;padding:18px;background:#080808;border:1px solid #333;
+    color:#fff;font:inherit;outline:none;border-radius:0;
+}
+input:focus,textarea:focus{border-color:#e50914}
+textarea{min-height:130px;resize:vertical}
+.form-note{font-size:11px;color:#666}
+
+/* Footer */
+footer{border-top:1px solid #242424;padding:28px 0;color:#666;font-size:11px}
+.footer-inner{display:flex;justify-content:space-between;gap:20px}
+.vk{color:#fff;font-weight:700}
+.vk:hover{color:#e50914}
+
+/* Responsive */
+@media(max-width:800px){
+    nav{display:none}
+    .hero-grid,.about-grid,.contact-grid{grid-template-columns:1fr;gap:40px}
+    .hero{min-height:auto}
+    .hero-grid{padding:75px 0}
+    .services-grid{grid-template-columns:1fr}
+    .section-head{display:block}
+    .section-head p{margin-top:20px}
+    section{padding:75px 0}
+    .hero-card{padding:28px}
+    .footer-inner{flex-direction:column}
+}
+</style>
+</head>
+<body>
+
+<header>
+<div class="container nav">
+    <a href="#top" class="logo">PR<span>I</span>ME</a>
+    <nav>
+        <a href="#about">О нас</a>
+        <a href="#services">Услуги</a>
+        <a href="#contacts">Контакты</a>
+    </nav>
+    <a href="#contacts" class="btn">Заказать</a>
+</div>
+</header>
+
+<main id="top">
+
+<section class="hero">
+<div class="container hero-grid">
+    <div>
+        <div class="kicker">Рекламное агентство / Пермь</div>
+        <h1>Создаём<br><span>рекламу,</span><br>которую замечают.</h1>
+        <p class="hero-text">
+            Создаём рекламу, которая помогает бизнесу быть заметным.
+            От визитки до комплексного оформления бренда — всё в одном месте.
+        </p>
+        <div class="hero-buttons">
+            <a href="#services" class="btn">Наши услуги</a>
+            <a href="#contacts" class="btn btn-outline">Оставить заявку</a>
+        </div>
+    </div>
+    <div class="hero-card">
+        <div class="kicker">Почему PRIME?</div>
+        <h3>Реклама, в которую мы вкладываем частичку себя.</h3>
+        <p>Гибкие цены, соблюдение сроков, индивидуальный подход и внимание к каждой детали.</p>
+        <div class="stat">
+            <div><strong>01</strong><small>Идея</small></div>
+            <div><strong>02</strong><small>Дизайн</small></div>
+            <div><strong>03</strong><small>Результат</small></div>
+        </div>
+    </div>
+</div>
+</section>
+
+<section id="about" class="about">
+<div class="container">
+    <div class="section-head">
+        <div><div class="eyebrow">О компании</div><h2>Создаём.<br>Влюбляем.</h2></div>
+        <p>Новая и современная компания будущего, которая всей душой болеет за рекламное дело.</p>
+    </div>
+    <div class="about-grid">
+        <div class="about-main">
+            Мы предлагаем стандартные рекламные решения и индивидуальные проекты в единичном экземпляре.
+            <b>Гибкая ценовая политика, сроки, доставка и бонусы</b> для наших клиентов.
+        </div>
+        <div class="about-side">
+            <p>Но всё же есть кое-что, чем мы выделяемся. Мы всей душой болеем за рекламное дело.</p>
+            <p>В каждый проект мы вкладываем кусочек себя и своей любви. Потому что результат начинается с отношения к работе.</p>
+            <div class="quote">МЫ ЛЮБИМ<br>СВОЮ РАБОТУ!</div>
+        </div>
+    </div>
+</div>
+</section>
+
+<section id="services">
+<div class="container">
+    <div class="section-head">
+        <div><div class="eyebrow">Что мы делаем</div><h2>Наши услуги</h2></div>
+        <p>От печатной продукции до продвижения в социальных сетях. Подберём решение под вашу задачу.</p>
+    </div>
+    <div class="services-grid">
+        <article class="service"><span class="service-number">01 / PRINT</span><h3>Полиграфия</h3><p>Визитки, буклеты, открытки, проспекты, листовки и флаеры.</p></article>
+        <article class="service"><span class="service-number">02 / OUTDOOR</span><h3>Наружная реклама</h3><p>Баннеры, световые вывески и другие рекламные решения.</p></article>
+        <article class="service"><span class="service-number">03 / MERCH</span><h3>Сувенирная продукция</h3><p>Кружки, ежедневники, футболки, ручки, флешки, зарядные устройства и другое.</p></article>
+        <article class="service"><span class="service-number">04 / OFFICE</span><h3>Канцелярия</h3><p>Тетради, ручки, блокноты, стикеры и фирменная офисная продукция.</p></article>
+        <article class="service"><span class="service-number">05 / SHOPPER</span><h3>Шопперы</h3><p>Производство шопперов по индивидуальному заказу и оптом.</p></article>
+        <article class="service"><span class="service-number">06 / SMM</span><h3>SMM</h3><p>Оформление социальных сетей и создание визуального образа бренда.</p></article>
+    </div>
+</div>
+</section>
+
+<section class="cta">
+<div class="container">
+    <h2>Есть идея?</h2>
+    <p>Расскажите о своей задаче — мы поможем превратить её в заметную рекламу.</p>
+    <a href="#contacts" class="btn">Обсудить проект</a>
+</div>
+</section>
+
+<section id="contacts" class="contact">
+<div class="container">
+    <div class="section-head">
+        <div><div class="eyebrow">Связаться с нами</div><h2>Контакты</h2></div>
+        <p>Оставьте предварительную заявку, и мы свяжемся с вами для уточнения деталей.</p>
+    </div>
+    <div class="contact-grid">
+        <div class="contact-info">
+            <div class="contact-item"><span>Адрес</span><strong>г. Пермь, ул. Ленина</strong></div>
+            <div class="contact-item"><span>Телефон</span><strong><a href="tel:+73422134567">(342) 213-45-67</a></strong></div>
+            <div class="contact-item"><span>E-mail</span><strong>prime@mail.ru</strong></div>
+            <div class="contact-item"><span>Социальная сеть</span><strong><a class="vk" href="https://vk.ru/club242063630" target="_blank" rel="noopener">VK →</a></strong></div>
+        </div>
+
+        <form class="form" onsubmit="event.preventDefault(); document.getElementById('success').textContent='Спасибо! Ваша заявка принята. Мы свяжемся с вами.'; this.reset();">
+            <input type="text" name="name" placeholder="Ваше имя" required>
+            <input type="tel" name="phone" placeholder="Телефон" required>
+            <input type="text" name="service" placeholder="Какая услуга вам нужна?">
+            <textarea name="message" placeholder="Коротко опишите задачу"></textarea>
+            <button type="submit" class="btn">Отправить заявку</button>
+            <div class="form-note">Нажимая кнопку, вы отправляете предварительную заявку.</div>
+            <div id="success" style="color:#e50914;font-size:13px;font-weight:600"></div>
+        </form>
+    </div>
+</div>
+</section>
+
+</main>
+
+<footer>
+<div class="container footer-inner">
+    <div>© 2026 PRIME — рекламное агентство</div>
+    <div>Пермь · <a class="vk" href="https://vk.ru/club242063630" target="_blank" rel="noopener">VK</a></div>
+</div>
+</footer>
+
+</body>
+</html>
